@@ -16,6 +16,9 @@
 		<junit.version>4.13</junit.version>
 	</properties>
 
+
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -23,6 +26,7 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!--AOP-->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>

@@ -196,6 +196,86 @@ public class TestAnnotation {
         System.out.println("personFactoryBean3类型：" + personFactoryBean3.getClass());
     }
 
+    /**
+     * 测试bean的初始化和销毁方法
+     */
+    @Test
+    public void testBeanLifeCircle(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(LifeCircleConfig.class);
+        System.out.println("容器创建完成...");
+        ac.close();
+    }
+
+    /**
+     * 测试多实例bean的初始化和销毁方法
+     */
+    @Test
+    public void testBeanLifeCircle1(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(LifeCircleConfig1.class);
+        System.out.println("容器创建完成...");
+        ac.getBean("teacher");
+        ac.close();
+    }
+
+    /**
+     * 测试InitializingBean, DisposableBean两个接口
+     * 注意执行顺序
+     */
+    @Test
+    public void testAnimalConfig(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AnimalConfig.class);
+        System.out.println("IOC容器创建完成...");
+        //关闭IOC容器
+        ac.close();
+    }
+
+    /**
+     * 测试InitializingBean, DisposableBean两个接口,bean实例是多例的情况
+     * 销毁方法在多例的情况一个也不调用
+     */
+    @Test
+    public void testAnimalConfig1(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AnimalConfig1.class);
+        System.out.println("IOC容器创建完成...");
+        //调用时创建对象
+        Object bean = ac.getBean("animal");
+        System.out.println("-------");
+        //调用时创建对象
+        Object bean1 = ac.getBean("animal");
+        System.out.println("-------");
+        //关闭IOC容器
+        ac.close();
+    }
+
+    /**
+     * 测试@PostConstruct和@preDestroy方法
+     */
+    @Test
+    public void testCatConfig(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(CatConfig.class);
+        //关闭IOC容器
+        ac.close();
+    }
+
+    /**
+     * 测试MyBeanPostProcessor的用法，每个bean初始化前后都会执行一遍两个方法，包括配置类本身的实例化
+     */
+    @Test
+    public void testDogConfig(){
+        //创建IOC容器
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(DogConfig.class);
+        //关闭IOC容器
+        ac.close();
+    }
+
+
+
+
 
 
 }
