@@ -13,3 +13,4 @@
 #测试线程池异步的使用                     ----------------com.roy.AopTest.testASsync
 #演示Spring框架中的原型模式               -----------------com.roy.DesignModeTest.testPrototype
 #演示父类的注入点同样生效                 ----------------com.roy.ExtTest.testExtendAutowired
+#演示容器的监听事件                      -----------------com.roy.ExtTest.testListner
