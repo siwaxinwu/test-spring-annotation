@@ -10,3 +10,6 @@
 #测试如何选择运行的环境                   ---------------com.roy.ProfileTest.testProfile02
 #AOP环境测试                            ----------------com.roy.AopTest
 #测试@import的3中使用方式                  --------------com.roy.configuration.PersonConfig10
+#测试线程池异步的使用                     ----------------com.roy.AopTest.testASsync
+#演示Spring框架中的原型模式               -----------------com.roy.DesignModeTest.testPrototype
+#演示父类的注入点同样生效                 ----------------com.roy.ExtTest.testExtendAutowired
