@@ -14,3 +14,5 @@
 #演示Spring框架中的原型模式               -----------------com.roy.DesignModeTest.testPrototype
 #演示父类的注入点同样生效                 ----------------com.roy.ExtTest.testExtendAutowired
 #演示容器的监听事件                      -----------------com.roy.ExtTest.testListner
+#测试自动注入的bean是原型的，@lookup注解的使用-------------com.roy.AutowiredTest.testLookup
+#BeanFactoryPostProcessor的demo演示     ----------------com.roy.AutowiredTest.testBeanPostProcessor
